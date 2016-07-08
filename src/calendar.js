@@ -1,12 +1,18 @@
 // TODO: add pamaeter got start time
 // TODO: calendar of calendars, year of months
 // TODO: week with times
-var moment = require('moment');
 
+
+// Dependencies:
+const moment = require('moment');
+
+
+// Constants:
 const WEEK = 7;
+const weekLength = 3;
+const weekStart = 1;
 
-var weekLength = 3;
-var weekStart = 1;
+
 
 function calendar (
   weekStart,
