@@ -77,5 +77,5 @@ calendars.map(a => {
     }
   );
 
-  document.body.innerHTML += '<table>' + output + '</table>';
+  document.getElementById('calendars').innerHTML += '<table>' + output + '</table>';
 });

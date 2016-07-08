@@ -1,3 +1,6 @@
+// TODO: add pamaeter got start time
+// TODO: calendar of calendars, year of months
+// TODO: week with times
 var moment = require('moment');
 
 const WEEK = 7;
@@ -10,7 +13,8 @@ function calendar (
   weekLength,
   formatHeader,
   formatBody,
-  formatFooter
+  formatFooter,
+  mode
 ) {
 
   weekStart    = weekStart || 0;
