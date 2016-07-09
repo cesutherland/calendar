@@ -37,7 +37,7 @@ function calendar (
 
   // Body:
   iterator.startOf('month').startOf('week').add(weekStart, 'days');
-  while (iterator.get('month') < month+1) {
+  while (iterator.get('month') < month) {
     printWeek(formatBody);
     iterator.add(WEEK - weekEnd + weekStart - 1, 'days');
   }
