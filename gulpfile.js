@@ -1,6 +1,9 @@
+
 // Modules:
+
 var path              = require('path');
 var gulp              = require('gulp');
+var lessRecipe        = require('gib-recipe-less');
 var webpackRecipe     = require('gib-recipe-webpack');
 
 
@@ -9,7 +12,7 @@ var webpackRecipe     = require('gib-recipe-webpack');
 var options = {
   entry: {
     app: './src/index.js',
-    css: '!style!css!less!bootstrap/less/bootstrap.less'
+    //styles: '!style!css!less!bootstrap/less/bootstrap.less'
   },
   dest: path.resolve(__dirname, 'build'),
   loaders: [
@@ -21,7 +24,7 @@ var options = {
 
 // Tasks:
 
-gulp.task('default', ['webpack', 'webpack-server']);
+gulp.task('default', ['webpack', 'webpack-server', 'less']);
 
 gulp.task('webpack', function () {
   return gulp.src('src/index.js')
@@ -31,3 +34,8 @@ gulp.task('webpack', function () {
 });
 
 gulp.task('webpack-server', webpackRecipe.server(options));
+
+gulp.task('less', lessRecipe.lessTask({
+  src: './node_modules/bootstrap/less/bootstrap.less',
+  dest: './build/styles-bundle.css'
+}));
