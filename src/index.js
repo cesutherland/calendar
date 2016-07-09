@@ -71,7 +71,7 @@ calendars.map(a => {
     (iterator, day) => {
       var result = '';
       if (day === start) result += '<tr>';
-      result += '<td>' + iterator.get('date') + '</td>';
+      result += '<td' + (iterator.format('M') == 6 ? ' class="other-month"' : '') + '>' + iterator.get('date') + '</td>';
       if ((day + 1) % (start + length) === 0) result += '</tr>';
       return result;
     }
