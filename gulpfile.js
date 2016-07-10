@@ -26,7 +26,6 @@ var options = {
 
 // Tasks:
 
-// gulp.task('default', ['webpack', 'webpack-server', 'less']);
 gulp.task('default', ['less', 'js', 'server', 'watch']);
 
 gulp.task('webpack', function () {
@@ -48,11 +47,14 @@ gulp.task('server', serverRecipe.serverTask({
 }));
 
 gulp.task('watch-less', ['less'], serverRecipe.browserSync.reload);
+// gulp.task('watch-js', ['js'], serverRecipe.browserSync.reload);
 
 gulp.task('watch', function () {
-  return gulp.watch('./src/**/*.less', ['watch-less']);
+  gulp.watch('./src/**/*.less', ['watch-less']);
+  //gulp.watch('./src/**/*.js', ['watch-js']);
 });
 
 gulp.task('js', browserifyRecipe.jsTask({
-  dest: './build/app-bundle.js'
+  dest: './build/app-bundle.js',
+  browserSync: serverRecipe.browserSync
 }));
