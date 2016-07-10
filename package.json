@@ -16,6 +16,7 @@
     "bootstrap": "^3.3.6",
     "css-loader": "^0.23.1",
     "file-loader": "^0.9.0",
+    "gib-recipe-browserify": "0.0.1",
     "gib-recipe-less": "0.0.1",
     "gib-recipe-server": "0.0.1",
     "gib-recipe-webpack": "0.0.2",

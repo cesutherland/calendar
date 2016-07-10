@@ -4,6 +4,7 @@
 var path              = require('path');
 var gulp              = require('gulp');
 var gulpWatch         = require('gulp-watch');
+var browserifyRecipe  = require('gib-recipe-browserify');
 var lessRecipe        = require('gib-recipe-less');
 var serverRecipe      = require('gib-recipe-server');
 var webpackRecipe     = require('gib-recipe-webpack');
@@ -26,7 +27,7 @@ var options = {
 // Tasks:
 
 // gulp.task('default', ['webpack', 'webpack-server', 'less']);
-gulp.task('default', ['server', 'less', 'watch']);
+gulp.task('default', ['less', 'js', 'server', 'watch']);
 
 gulp.task('webpack', function () {
   return gulp.src('src/index.js')
@@ -51,3 +52,7 @@ gulp.task('watch-less', ['less'], serverRecipe.browserSync.reload);
 gulp.task('watch', function () {
   return gulp.watch('./src/**/*.less', ['watch-less']);
 });
+
+gulp.task('js', browserifyRecipe.jsTask({
+  dest: './build/app-bundle.js'
+}));
