@@ -21,6 +21,7 @@
     "gib-recipe-webpack": "0.0.2",
     "gulp": "^3.9.1",
     "gulp-cli": "^1.2.1",
+    "gulp-watch": "^4.3.8",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "moment": "^2.13.0",
